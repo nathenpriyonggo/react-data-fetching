@@ -18,7 +18,8 @@ function App() {
 
   const {
     isFetching, 
-    error, 
+    error,
+    setFetchedData: setUserPlaces,
     fetchedData: userPlaces 
   } = useFetch(fetchUserPlaces, []);
 
@@ -64,7 +65,7 @@ function App() {
     }
     
     setModalIsOpen(false);
-  }, [userPlaces]);
+  }, [userPlaces, setUserPlaces]);
 
 
   function handleError() {
